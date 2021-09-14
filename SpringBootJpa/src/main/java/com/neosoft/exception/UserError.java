@@ -2,6 +2,7 @@ package com.neosoft.exception;
 
 import java.util.Date;
 
+
 public class UserError {
 
 	private Date timestamp;

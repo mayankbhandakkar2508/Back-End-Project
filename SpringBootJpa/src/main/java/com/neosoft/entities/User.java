@@ -13,17 +13,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
 @Entity
 public class User{
 	
@@ -64,5 +54,96 @@ public class User{
 	@Temporal(TemporalType.DATE)
 	@Column(name="JOININGDATE")
 	private Date joiningdate;
+
+	public Long getUid() {
+		return uid;
+	}
+
+	public void setUid(Long uid) {
+		this.uid = uid;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
+	}
+
+	public String getPhno() {
+		return phno;
+	}
+
+	public void setPhno(String phno) {
+		this.phno = phno;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getDob() {
+		return dob;
+	}
+
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
+
+	public Date getJoiningdate() {
+		return joiningdate;
+	}
+
+	public void setJoiningdate(Date joiningdate) {
+		this.joiningdate = joiningdate;
+	}
+
+	public User(Long uid,
+			@NotNull(message = "Insert First Name") @Size(min = 3, message = "First Name have atleast 3 Characters") String firstname,
+			@NotNull(message = "Insert Last Name") @Size(min = 3, message = "Last Name have atleast 3 Characters") String lastname,
+			@NotNull @Email String email, @NotNull @Size(min = 6, max = 6) String pincode, String phno, String status,
+			Date dob, Date joiningdate) {
+		super();
+		this.uid = uid;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.pincode = pincode;
+		this.phno = phno;
+		this.status = status;
+		this.dob = dob;
+		this.joiningdate = joiningdate;
+	}
+
+	
 	
 }

@@ -116,6 +116,7 @@
 			</plugin>
 			
 		</plugins>
+		<finalName>docker-jenkins-test</finalName>
 	</build>
 
 </project>
